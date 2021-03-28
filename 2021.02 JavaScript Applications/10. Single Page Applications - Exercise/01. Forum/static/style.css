@@ -1,0 +1,978 @@
+/* Removes all default whitespace */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Reset CSS model sizing calculations */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+.site {
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+table {
+    border: 1px solid #CCC;
+    width: 100%;
+    border-spacing: 0.2em;
+    margin-bottom: 1.5em;
+}
+
+table td,
+table th {
+    border: 1px solid #CCC;
+    padding: 0.4em 0.8em;
+}
+
+table td {
+    background: #EEE;
+}
+
+table thead th,
+table tfoot td {
+    font-weight: bold;
+    text-align: left;
+    background: #000;
+    color: #FFF;
+}
+
+table tbody tr:nth-child(even) td {
+    background: #CCC;
+}
+
+html {
+    font: 18px/1.5 Verdana, sans-serif;
+}
+
+body, form, input, textarea, option, select, button {
+    font: inherit;
+}
+
+ul, ol {
+    padding-bottom: 1.5em;
+}
+
+ul, ol {
+    padding-left: 2.5em;
+}
+
+blockquote, h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0.5rem;
+    padding-top: 1.5rem;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2.6em;
+}
+
+h2 {
+    font-size: 2.0em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1.0em;
+}
+
+p+h1, p+h2, p+h3, p+h4, p+h5, p+h6 {
+    padding-top: 0.5em;
+}
+
+blockquote {
+    padding: 0 2.5em;
+    border-left: 2px solid #000000;
+    font-family: Georgia, serif;
+    margin-bottom: 1.5em;
+}
+
+blockquote, p {
+    font-style: italic;
+}
+
+blockquote p+p {
+    padding-top: 1.5em;
+}
+
+blockquote p:last-child {
+    padding-bottom: 0;
+}
+
+blockquote p.author {
+    text-align: right;
+}
+
+@media (min-width: 800px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1280px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+/* new-topic */
+.new-topic-border {
+    border: 1px solid;
+    border-radius: 1em;
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+.new-topic-border .input {
+    margin-bottom: 1em;
+}
+
+.header-background {
+    background-color: #4ebced;
+    border: 1px solid #4ebced;
+    padding: 1.5em;
+    padding-bottom: 0;
+    margin-bottom: 1em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+}
+
+.header-background span {
+    background-color: #fff;
+    padding: 0.5em;
+    margin-top: 1em;
+    border-radius: 0.3em;
+}
+
+.title, .new-topic-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-topic-content {
+    min-height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.new-topic-content textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.new-topic-content label {
+    margin-bottom: 0.3em;
+}
+
+.new-topic-title {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+
+.new-topic-title input {
+    width: 55%;
+    border-radius: 0.3em;
+    padding: 0.35em;
+}
+
+button+button {
+    margin-left: 1rem;
+}
+
+.new-topic-buttons {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.new-topic-buttons button {
+    padding: 0.4em 1.5em;
+    border: 1px solid #4ebced;
+    border-radius: 0.3em;
+}
+
+p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+}
+
+.input-error {
+    border-left-color: red;
+}
+
+/* topic content  */
+.topic-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+/* topic title  */
+.topic-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3em 0.5em;
+    border: 1px solid #999;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+    margin-top: 1em;
+}
+
+.topic-title {
+    padding: 0;
+}
+
+.topic-name {
+    width: 100%;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+}
+
+.subscribers {
+    text-align: right;
+    flex-basis: 25%;
+}
+
+.subscribers button {
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.subscribe {
+    background-color: green;
+}
+
+.unsubscribe {
+    background-color: red;
+}
+
+.topic-title {
+    width: 100%;
+}
+
+.topic-name-wrapper .subscribers p {
+    text-align: right;
+}
+
+.topic-name {
+    margin-right: 1em;
+}
+
+.topic-name h2 {
+    padding-top: 0;
+}
+
+/* comment  */
+.comment {
+    margin-top: 1em;
+    border: 1px solid;
+    border-radius: 0.3em;
+    width: 100%;
+    padding: 1em;
+}
+
+.comment header p {
+    padding: 0.3em;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px dashed;
+    margin-right: 0;
+}
+
+.comment-main {
+    margin: 1em;
+    display: flex;
+}
+
+.userdetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.userdetails p {
+    padding-left: 0;
+    text-align: left;
+}
+
+.post-content p {
+    padding-left: 1.5em;
+}
+
+.userdetails div {
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.userdetails img {
+    padding: 0;
+    align-self: center;
+    margin: 1em 0;
+    width: 5em;
+    height: 5em;
+    border: 1px solid;
+}
+
+.footer {
+    font-size: 1.5em;
+    border-top: 1px dashed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: rgb(0, 128, 182);
+}
+
+.footer i {
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.footer p {
+    padding-left: 0.5em;
+}
+
+.footer .fas.fa-thumbs-up {
+    color: green;
+}
+
+.footer .fas.fa-thumbs-down {
+    color: red;
+}
+
+/* answer-comment */
+.answer-comment {
+    width: 100%;
+    /* display: flex; */
+    margin-top: 1em;
+}
+
+.answer-comment p {
+    flex-basis: 15%;
+    padding-bottom: 0.3em;
+}
+
+.answer-comment p span {
+    color: rgb(0, 128, 182);
+    font-size: 1.2em;
+}
+
+.answer {
+    border: 1px solid;
+    border-radius: 0.3em;
+    flex-basis: 85%;
+    text-align: center;
+}
+
+.answer textarea {
+    width: 90%;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+.answer button {
+    color: white;
+    margin: 0.5em 1em;
+    padding: 0.2em 1em;
+    border: 1px solid;
+    border-radius: 0.3em;
+}
+
+.answer button:hover {
+    cursor: pointer;
+}
+
+.comment-area {
+    min-width: 100%
+}
+
+/* new-theme */
+.new-theme-border {
+    border: 1px solid;
+    border-radius: 1em;
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+.new-theme-border .input {
+    margin-bottom: 1em;
+}
+
+.header-background {
+    background-color: #4ebced;
+    border: 1px solid #4ebced;
+    padding: 1.5em;
+    padding-bottom: 0;
+    margin-bottom: 1em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+}
+
+.header-background span {
+    background-color: #fff;
+    padding: 0.5em;
+    margin-top: 1em;
+    border-radius: 0.3em;
+}
+
+.title, .new-theme-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-theme-content {
+    min-height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.new-theme-content textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.new-theme-content label {
+    margin-bottom: 0.3em;
+}
+
+.new-theme-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-theme-title input {
+    width: 55%;
+    border-radius: 0.3em;
+    padding: 0.35em;
+}
+
+button+button {
+    margin-left: 1rem;
+}
+
+.new-theme-buttons {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.new-theme-buttons button {
+    padding: 0.4em 1.5em;
+    border: 1px solid #333333;
+    border-radius: 0.3em;
+}
+
+p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+}
+
+.input-error {
+    border-left-color: red;
+}
+
+/* theme content  */
+.theme-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+/* theme title  */
+.theme-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3em 0.5em;
+    border: 1px solid #999;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+    margin-top: 1em;
+}
+
+.theme-title {
+    padding: 0;
+}
+
+.theme-name {
+    width: 100%;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+}
+
+.subscribers {
+    text-align: right;
+    flex-basis: 25%;
+}
+
+.subscribers button {
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.subscribe {
+    background-color: green;
+}
+
+.unsubscribe {
+    background-color: red;
+}
+
+.theme-title {
+    width: 100%;
+}
+
+.theme-name-wrapper .subscribers p {
+    text-align: right;
+}
+
+.theme-name {
+    margin-right: 1em;
+}
+
+.theme-name h2 {
+    padding-top: 0;
+}
+
+/* comment  */
+.comment {
+    margin-top: 1em;
+    border: 1px solid;
+    border-radius: 0.3em;
+    width: 100%;
+    padding: 1em;
+}
+
+.comment header p {
+    padding: 0.3em;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px dashed;
+    margin-right: 0;
+}
+
+.comment-main {
+    margin: 1em;
+    display: flex;
+}
+
+.userdetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.userdetails p {
+    padding-left: 0;
+    text-align: left;
+}
+
+.post-content p {
+    padding-left: 1.5em;
+}
+
+.userdetails div {
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.userdetails img {
+    padding: 0;
+    align-self: center;
+    margin: 1em 0;
+    width: 5em;
+    height: 5em;
+    border: 1px solid;
+}
+
+.footer {
+    font-size: 1.5em;
+    border-top: 1px dashed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: rgb(0, 128, 182);
+}
+
+.footer i {
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.footer p {
+    padding-left: 0.5em;
+}
+
+.footer .fas.fa-thumbs-up {
+    color: green;
+}
+
+.footer .fas.fa-thumbs-down {
+    color: red;
+}
+
+/* answer-comment */
+.answer-comment {
+    width: 100%;
+    /* display: flex; */
+    margin-top: 1em;
+}
+
+.answer-comment p {
+    flex-basis: 15%;
+    padding-bottom: 0.3em;
+}
+
+.answer-comment p span {
+    color: rgb(0, 128, 182);
+    font-size: 1.2em;
+}
+
+.answer {
+    border: 1px solid;
+    border-radius: 0.3em;
+    flex-basis: 85%;
+    text-align: center;
+}
+
+.answer textarea {
+    width: 90%;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+.answer button {
+    color: white;
+    margin: 0.5em 1em;
+    padding: 0.2em 1em;
+    border: 1px solid;
+    border-radius: 0.3em;
+}
+
+.answer button:hover {
+    cursor: pointer;
+}
+
+.comment-area {
+    min-width: 100%
+}
+
+/* REST CSS */
+body {
+    max-width: 980px;
+    margin: auto;
+    position: relative;
+    min-height: 100vh;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+h2 {
+    text-align: center;
+    border-bottom: 1px dashed #999;
+}
+
+span {
+    font-weight: bold;
+}
+
+span.red {
+    color: red;
+}
+
+button {
+    background-color: #4ebced;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #34a1d1;
+}
+
+/* header  */
+header {
+    background: rgb(0, 128, 182);
+    background: linear-gradient(0deg, rgba(0, 128, 182, 1) 0%, rgba(0, 128, 182, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+header ul {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+}
+
+header ul span {
+    color: white;
+    padding: 0.5em;
+}
+
+.mini-navbar ul {
+    border: 1px solid #00d4ff;
+    border-radius: 0.3em;
+    padding-left: 0;
+    width: 100%;
+}
+
+header li {
+    list-style: none;
+    margin: .35em;
+    padding: 0 .95em;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+nav {
+    border-top: 1px solid #00acf4;
+}
+
+.logo {
+    font-size: 1.3em;
+    color: white;
+    padding-bottom: 0;
+}
+
+.logo-wrap {
+    font-family: 'Parisienne', cursive;
+    letter-spacing: .5em;
+    margin: 0.5em 0;
+}
+
+.mini-navbar-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+}
+
+/* mini-navbar */
+.mini-navbar ul {
+    background-color: #6ba1b8;
+    border-radius: 5px;
+}
+
+.mini-navbar ul li+li {
+    border-left: 1px solid lightgrey;
+    padding-left: .5em;
+}
+
+/* main  */
+main {
+    width: 80%;
+    margin: auto;
+}
+
+/* topic list item */
+.topic-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topic-container span {
+    font-weight: bold;
+}
+
+.topic-container h2, p {
+    padding: 0.3em 0 0.2em;
+    margin: 0;
+}
+
+.topic-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3em 0.5em;
+    border: 1px solid #999;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+    margin-top: 1em;
+}
+
+.topic-title {
+    padding: 0;
+}
+
+.topic-name {
+    width: 100%;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+}
+
+.subscribers {
+    text-align: right;
+    flex-basis: 25%;
+}
+
+.subscribers button {
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.subscribe {
+    background-color: green;
+}
+
+.unsubscribe {
+    background-color: red;
+}
+
+time {
+    font-weight: bold;
+}
+
+/* aside  */
+aside {
+    width: 29%;
+    margin-top: 1em;
+    font-size: 0.8em;
+}
+
+.aside * {
+    margin: 0;
+    padding: 0;
+}
+
+.aside>div {
+    border: 1px solid #999;
+    border-radius: 0.3em;
+    padding: 0.3em 0.5em;
+}
+
+.title {
+    font-size: 1.5em;
+    border-bottom: none;
+}
+
+.aside .aside-topic {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+}
+
+.aside h3 {
+    border-bottom: none;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    background-color: #4ebced;
+    padding-left: 0.5rem;
+}
+
+.aside-topic+.aside-topic {
+    border-top: dashed 1px #999;
+}
+
+.aside-topic p {
+    text-align: right;
+}
+
+.aside-topic a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* footer  */
+footer {
+    background: rgb(0, 212, 255);
+    margin-top: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    max-width: 1366px;
+    padding-top: 1rem;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+footer span {
+    font-size: 1.5em;
+}

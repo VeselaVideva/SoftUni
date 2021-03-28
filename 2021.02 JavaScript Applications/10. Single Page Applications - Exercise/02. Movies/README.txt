@@ -1,0 +1,10 @@
+function for Login 			=> DONE
+function for Register 		=> DONE
+function for Loggout 		=> DONE
+function for Create movie 		=> DONE
+function for Load on Home page	=> DONE
+function for rendering Details page 	=> DONE
+function for Editing a movie		=> DONE
+function for Deleting a movie		=> DONE
+function for Like			=> DONE
+function for Unlike			=> NOT IMPLEMENTED !
