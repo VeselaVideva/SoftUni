@@ -1,0 +1,41 @@
+#exercise form {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+#exercise h2 {
+  margin-bottom: 10px;
+}
+
+#exercise label {
+  display: block;
+  position: relative;
+  margin: 16px 0;
+  text-align: right;
+  padding-right: 520px;
+  line-height: 48px;
+}
+
+#exercise input[type="text"], #exercise input[type="password"], #exercise textarea {
+  position: absolute;
+  right: 0px;
+  width: 500px;
+  padding: 10px;
+}
+
+#exercise input[type="submit"] {
+  width: 50%;
+}
+
+#exercise textarea {
+  height: 300px;
+  resize: none;
+}
+
+#exercise .ml {
+  height: 300px;
+}
+
+#exercise button {
+  width: 50%;
+}

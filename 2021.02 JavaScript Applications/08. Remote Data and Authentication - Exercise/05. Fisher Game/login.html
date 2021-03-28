@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biggest Catch</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/login.css">
+</head>
+
+<body>
+    <header>
+        <h1>Biggest Catch</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <div id="guest">
+                <a href="login.html" class="active">Login</a>
+            </div>
+            <div id="user" style="display: none;">
+                <a id="logoutBtn" href="javascript:void(0)">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <button id="load" style="display: none;">Load</button>
+        <div id="container">
+            <div id="exercise">
+                <div class="wrapper">
+                    <div class="card-wrapper">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Register</h2>
+                                <form id="registerForm" action="/users/register" method="POST">
+                                    <label>E-mail: <input type="text" name="email"></label>
+                                    <label>Password: <input type="password" name="password"></label>
+                                    <label>Repeat: <input type="password" name="repass"></label>
+                                    <input type="submit" value="Register">
+                                </form>
+                                <hr>
+                                <h2>Login</h2>
+                                <form id="loginForm" action="/users/login" method="POST">
+                                    <label>E-mail: <input type="text" name="email"></label>
+                                    <label>Password: <input type="password" name="password"></label>
+                                    <input type="submit" value="Login">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./app.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (ev) => {
+            ev.preventDefault();
+
+            const formData = new FormData(ev.target);
+
+            const email = formData.get('email');
+            const password = formData.get('password');
+            const repass = formData.get('repass');
+
+            if (email.trim() === '' || password.trim() === '') {
+                return alert('All fields are required!');
+
+            } else if (password.trim() !== repass.trim()) {
+                return alert(`Passwords don't match!`);
+            }
+
+            try {
+                const response = await fetch('http://localhost:3030/users/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    sessionStorage.setItem('token', data.accessToken);
+
+                    return alert('You are successfully registered! Please log in!');
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message);
+                }
+
+            } catch (err) {
+                console.error(err.message);
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', async (ev) => {
+            ev.preventDefault();
+
+            const formData = new FormData(ev.target);
+
+            const email = formData.get('email');
+            const password = formData.get('password');
+
+            if (email.trim() === '' || password.trim() === '') {
+                return alert('All fields are required!');
+            }
+
+            try {
+                const response = await fetch('http://localhost:3030/users/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+
+                    sessionStorage.setItem('token', data.accessToken);
+                    sessionStorage.setItem('userId', data._id);
+                    sessionStorage.setItem('email', data.email);
+
+                    window.location.href = 'index.html'; // redirect to index.html page
+
+                    return alert('You are successfully logged in!');
+                } else {
+                    alert(`Error: ${response.statusText}`);
+                }
+
+            } catch (err) {
+                console.error(err.message);
+            }
+        });
+    </script>
+</body>
+
+</html>

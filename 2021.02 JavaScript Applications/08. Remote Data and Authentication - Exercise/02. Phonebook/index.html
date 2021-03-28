@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Phonebook</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>Phonebook</h1>
+    <ul id="phonebook"></ul>
+    <button id="btnLoad">Load</button>
+    <form id="createForm">
+        <h2>Create Contact</h2>
+        <input type="hidden" name="id">
+        <label for="person">Person:</label>
+        <input type="text" id="person" name="person" />
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" />
+        <input id="btnCreate" type="submit" value="Create">
+    </form>
+    <script src="app.js"></script>
+</body>
+
+</html>

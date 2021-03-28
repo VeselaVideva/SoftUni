@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  font-family: 'Open Sans',serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btnDelete {
+  background-color: #db0202;
+}
+
+.btnDelete:hover {
+  background-color: #c90606;
+}
+
+#phonebook {
+  list-style-type: circle;
+}
+
+#btnLoad,
+#btnCreate {
+  padding: 1rem 2rem;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#btnLoad:hover,
+#btnCreate:hover {
+  background-color: #2d8c31;
+}
+
+#createForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

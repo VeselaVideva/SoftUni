@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', serif;
+    background: #eaeaea;
+    text-align: center;
+    font-size: 20px;
+    width: 980px;
+    margin: auto;
+}
+
+header {
+    padding: 32px;
+    background-color: #cccccc;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav div {
+    display: inline-block;
+}
+
+nav a {
+    display: inline-block;
+    background: #234465;
+    color: white;
+    padding: 8px 16px;
+    margin: 0 8px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #6c8b47;
+    color: white;
+}
+
+a.active {
+    background-color: #6c8b47;
+    color: white;
+}
+
+main {
+    background-color: #fff;
+    padding: 32px;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    display: inline-block;
+}
+
+#catches {
+    width: 100%;
+}
+
+aside {
+    width: 20%;
+    display: inline-block;
+    margin: 1% 0;
+}
+
+button {
+    background-color: #234465;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 20px;
+    width: 95%;
+    margin: 5px 0;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #6c8b47;
+}
+
+button:disabled {
+    background-color: rgba(35, 68, 101, .5);
+}
+
+fieldset {
+    display: inline-table;
+    vertical-align: top;
+    border: 2px solid black;
+}
+
+legend {
+    margin: auto;
+}
+
+fieldset#main {
+    width: 75%;
+    margin: 0 3% 0 0;
+    padding-bottom: 15px;
+}
+
+#addForm fieldset {
+    padding: 1% 4%;
+}
+
+input {
+    padding: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 95%;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    border: none;
+    margin: 5px auto;
+    background: #234465;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #6c8b47;
+    color: white;
+    cursor: pointer;
+}
+
+label {
+    margin: 5px;
+}
+
+hr {
+    display: block;
+    margin: 10px 0;
+}
+
+.catches {
+    text-align: center;
+}
+
+.catch {
+    border: 1px solid black;
+    width: 31%;
+    margin: 0.5%;
+    padding: 1%;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
