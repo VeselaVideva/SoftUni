@@ -1,0 +1,19 @@
+/* My additional styles */
+
+#userNav,
+#guestNav {
+    display: flex;
+    align-items: center;
+}
+
+#views {
+    display: none;
+}
+
+.featurette-heading {
+    margin-bottom: 2rem;
+}
+
+.display-5 {
+    margin-bottom: 2rem;
+}
