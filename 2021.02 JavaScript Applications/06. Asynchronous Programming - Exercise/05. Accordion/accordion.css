@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.accordion {
+  border: 1px solid #cdc7c7;
+  display: inline-table;
+  width: 47%;
+  font-size: 1.3rem;
+  margin: 1%;
+}
+
+.accordion p {
+  margin: 1em;
+}
+
+.button {
+  float: right;
+  background: #393636;
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.extra {
+  display: none;
+}
+
+.head {
+  background: #ccccff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
